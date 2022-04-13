@@ -137,7 +137,7 @@ const ReservationNavigator = createStackNavigator(
                 color: '#fff'
             },
             headerLeft: <Icon
-                    name='tre'
+                    name='tree'
                     type='font-awesome'
                     iconStyle={styles.stackIcon}
                     onPress={()=> navigation.toggleDrawer()}
