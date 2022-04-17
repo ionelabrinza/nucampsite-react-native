@@ -20,6 +20,34 @@ export const fetchComments = () => dispatch => {
         .then(comments => dispatch(addComments(comments)))
         .catch(error => dispatch(commentsFailed(error.message)));
 };
+/////////Week 2 assignment, Task 3
+
+export const postComment = (campsiteId, rating, author, text) => dispatch => {
+    const newComment = {
+        campsiteId,
+        rating,
+        author,
+        text
+    };
+    newComment.date = new Date().toISOString();
+
+    setTimeout(() => {
+        dispatch(addComment(newComment));
+    }, 2000);
+
+};
+
+export const addComment = (comment) => ({ 
+    type: ActionTypes.ADD_COMMENT,
+    payload: comment,
+
+
+});
+
+
+//////
+
+
 
 export const commentsFailed = errMess => ({
     type: ActionTypes.COMMENTS_FAILED,
@@ -30,6 +58,8 @@ export const addComments = comments => ({
     type: ActionTypes.ADD_COMMENTS,
     payload: comments
 });
+
+
 
 export const fetchCampsites = () => dispatch => {
 
