@@ -42,7 +42,7 @@ function RenderItem(props) {
 }
 
 class Home extends Component {
-    constructor (props) {
+    constructor(props) {
         super(props);
         this.state = {
             scaleValue: new Animated.Value(0)
